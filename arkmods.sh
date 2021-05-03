@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$MODCOLLECTION"]
+if [ -z "$MODCOLLECTION" ]
 then
   echo "No mods to install"
   exit 0
