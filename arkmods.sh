@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$MODCOLLECTION"]
+then
+  echo "No mods to install"
+  exit 0
+fi
+
 MODID=$(echo $MODCOLLECTION | grep SubscribeCollectionItem | cut -d"'" -f2)
 
 echo > modlist
@@ -14,7 +20,7 @@ sed -i '/^$/d' modlist
 #Steamcmd install mods from modlist
 for m in `cat modlist`;
 do
-    ./steamcmd.sh +login anonymous +force_install_dir /mnt/server +workshop_download_item 376030 $m +quit
+    ./steamcmd.sh +login anonymous +force_install_dir /home/container +workshop_download_item 376030 $m +quit
 done
 
 #Set ActiveMods in ./ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
