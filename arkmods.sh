@@ -25,7 +25,7 @@ sed -i '/^$/d' modlist
 #Steamcmd install mods from modlist
 for m in `cat modlist`;
 do
-    ./steamcmd.sh +login anonymous +force_install_dir /home/container +workshop_download_item 376030 $m +quit
+    ./steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container +workshop_download_item 376030 $m +quit
 done
 
 #Set ActiveMods in ./ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
