@@ -6,7 +6,7 @@ then
   exit 0
 fi
 
-MODID=$(echo ${MODCOLLECTION} | grep SubscribeCollectionItem | cut -d"'" -f2)
+MODID=$(curl ${MODCOLLECTION} | grep SubscribeCollectionItem | cut -d"'" -f2)
 
 echo > modlist
 
@@ -30,6 +30,6 @@ then
     sed -i "s/ActiveMods=.*/ActiveMods=$MODLISTLINE/g" ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 else
     #Insert ActiveMods=
-    sed -i "/[ServerSettings]/a ActiveMods=" test.txt
+    sed -i "/[ServerSettings]/a ActiveMods=" ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
     sed -i "s/ActiveMods=.*/ActiveMods=$MODLISTLINE/g" ShooterGame/Saved/Config/LinuxServer/GameUserSettings.ini
 fi
