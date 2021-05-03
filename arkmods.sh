@@ -25,7 +25,7 @@ sed -i '/^$/d' modlist
 #Steamcmd install mods from modlist
 for m in `cat modlist`;
 do
-    /home/container/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container/ +workshop_download_item 376030 $m +quit
+    /home/container/steamcmd/steamcmd.sh +login anonymous +force_install_dir /home/container/ +workshop_download_item 346110 $m +quit
 done
 
 #If GameUserSettings doesn't exist, probably first run, exit
