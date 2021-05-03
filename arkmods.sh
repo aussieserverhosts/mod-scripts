@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 if [ "${MODCOLLECTION}" == "" ]
 then
   echo "No mods to install"
@@ -9,6 +10,10 @@ fi
 MODID=$(curl ${MODCOLLECTION} | grep SubscribeCollectionItem | cut -d"'" -f2)
 
 echo > modlist
+
+#Mod IDs
+echo "Mod IDs"
+echo $MODID
 
 #Strip mod IDs from Collection
 for i in $MODID
