@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ -z "$MODCOLLECTION" ]
+if [ "${MODCOLLECTION}" == "" ]
 then
   echo "No mods to install"
   exit 0
 fi
 
-MODID=$(echo $MODCOLLECTION | grep SubscribeCollectionItem | cut -d"'" -f2)
+MODID=$(echo ${MODCOLLECTION} | grep SubscribeCollectionItem | cut -d"'" -f2)
 
 echo > modlist
 
